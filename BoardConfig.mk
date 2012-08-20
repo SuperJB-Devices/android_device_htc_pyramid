@@ -34,11 +34,17 @@ TARGET_BOOTLOADER_BOARD_NAME := pyramid
 BOARD_KERNEL_BASE := 0x48000000
 BOARD_KERNEL_PAGE_SIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0 androidboot.hardware=pyramid no_console_suspend=1
-TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
+#TARGET_PREBUILT_KERNEL := device/htc/pyramid/prebuilt/kernel
+TARGET_KERNEL_SOURCE := kernel/htc/msm8660/
+TARGET_KERNEL_CONFIG := pyramid_defconfig
+
+# Wifi
+WIFI_DRIVER_MODULE_NAME          := bcmdhd
+WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
 
 # QCOM Gralloc/Copybit/HWcomposer
 TARGET_USES_OVERLAY := false
-COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS -DQCOM_NO_SECURE_PLAYBACK
+COMMON_GLOBAL_CFLAGS += -DQCOM_ROTATOR_KERNEL_FORMATS
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := pyramid
@@ -48,10 +54,6 @@ BOARD_PROVIDES_LIBRIL := true
 
 # Audio
 BOARD_HAVE_HTC_AUDIO := true
-
-# Wifi
-WIFI_DRIVER_MODULE_NAME          := bcmdhd
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
