@@ -54,6 +54,7 @@ on init
 on emmc-fs
     # mount all mmc partitions
     mount_all /fstab.pyramid
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
     setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
 
@@ -227,11 +228,6 @@ service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p26 /dev/block/mmc
     class core
     user root
 
-service thermald /system/bin/thermald
-    user root
-    group root
-    disabled
-
 service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c /data/misc/wifi/wpa_supplicant.conf
     user root
     group wifi inet
@@ -247,5 +243,3 @@ on property:ro.hdmi.enable=true
 
 on property:sys.radio.shutdown=true
     exec /system/bin/sh /system/etc/init.qcom.efs.sync.sh
-    user root
-    group root
