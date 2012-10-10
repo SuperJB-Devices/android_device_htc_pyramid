@@ -27,10 +27,6 @@ PRODUCT_PACKAGES += \
     gps.pyramid \
     lights.pyramid
 
-# Wifi Calling
-#PRODUCT_PACKAGES += \
-#    GanOptimizer
-
 ## The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_EU:system/etc/gps.conf
 
@@ -77,7 +73,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += device/htc/pyramid/configs/AudioBTID.csv:system/etc/AudioBTID.csv
 
 # QC thermald config
-#PRODUCT_COPY_FILES += device/htc/pyramid/configs/thermald.conf:system/etc/thermald.conf
+
 
 # Sound configs
 PRODUCT_COPY_FILES += \
