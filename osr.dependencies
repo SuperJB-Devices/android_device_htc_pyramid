@@ -1,6 +1,6 @@
 [
   {
-    "repository": "android_device_htc_msm8660-common",
+    "repository": "SuperJB-Devices/android_device_htc_msm8660-common",
     "target_path": "device/htc/msm8660-common"
   }
 ]
