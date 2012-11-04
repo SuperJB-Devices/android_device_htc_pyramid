@@ -6,5 +6,9 @@
   {
     "repository": "SuperJB-Kernel/android_kernel_htc_pyramid",
     "target_path": "kernel/htc/msm8660"
+  },
+  {
+    "repository": "SuperJB-Vendor/android_vendor_htc_pyramid",
+    "target_path": "vendor/htc/pyramid"
   }
 ]
